@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "7799aab1-dfe0-4b93-83ca-1f7ad6191bd5",
+		"name": "email-conf-forgot-pass",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34423262"
+	},
+	"item": [
+		{
+			"name": "password reset",
+			"item": [
+				{
+					"name": "send reset password link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"johnsmith4@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/reset/password",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"reset",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"asddsa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/reset/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWM5ZWY5NWVjMzQ1YWViYmRlZjJhZiIsImlhdCI6MTcyMTcxODg1OCwiZXhwIjoxNzIxNzE5MzM4fQ.bjHqNYlwtQ6sUi6_Q6HrRE_-GXcx8Bj9uT7ujhdgBnQ",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"reset",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWM5ZWY5NWVjMzQ1YWViYmRlZjJhZiIsImlhdCI6MTcyMTcxODg1OCwiZXhwIjoxNzIxNzE5MzM4fQ.bjHqNYlwtQ6sUi6_Q6HrRE_-GXcx8Bj9uT7ujhdgBnQ"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "email confirmation",
+			"item": [
+				{
+					"name": "send email confirmation link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWM5ZWZkNWVjMzQ1YWViYmRlZjJiMSIsImlhdCI6MTcyMTczOTc3NywiZXhwIjoxNzI0MzMxNzc3fQ.QtVwhi6ZswF_Jg017hpJRDjwBFVKC-XA9vIvopAHCkw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/confirmation/email",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"confirmation",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "email confirmation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWM5ZWY5NWVjMzQ1YWViYmRlZjJhZiIsImlhdCI6MTcyMTU0MDM5MSwiZXhwIjoxNzI0MTMyMzkxfQ.dZoke4rRhS_d21kvJsO99h3I1rzZ3sKYWTothwG-mHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/confirmation/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWM5ZWY5NWVjMzQ1YWViYmRlZjJhZiIsImlhdCI6MTcyMTU0MTQwMCwiZXhwIjoxNzIxNTQxODgwfQ.aagYnU_QxI--ACUhLs74SPXow4Gh1HyFdxcYZZ-C3fM",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"confirmation",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWM5ZWY5NWVjMzQ1YWViYmRlZjJhZiIsImlhdCI6MTcyMTU0MTQwMCwiZXhwIjoxNzIxNTQxODgwfQ.aagYnU_QxI--ACUhLs74SPXow4Gh1HyFdxcYZZ-C3fM"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"email\": \"johnsmith5@gmail.com\",\n    \"password\": \"asdasd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/auth/signup",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"johnsmith3@gmail.com\",\n    \"password\": \"asdasd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
